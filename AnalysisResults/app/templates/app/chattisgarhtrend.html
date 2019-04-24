@@ -1,0 +1,74 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  title:{
+    text: "Trendwise Data For chhattisgarh, 2019-2013"
+  },  
+  axisY: {
+    title: "Number of Votes",
+    titleFontColor: "#4F81BC",
+    lineColor: "#4F81BC",
+    labelFontColor: "#4F81BC",
+    tickColor: "#4F81BC"
+  },
+  axisX: {
+    title: "Constituency",
+    titleFontColor: "#4F81BC",
+    lineColor: "#4F81BC",
+    labelFontColor: "#4F81BC",
+    tickColor: "#4F81BC"
+  },
+   
+ 
+  data: [{
+    type: "column",
+   toolTipContent: "<b>{label}</b><br>Previous Margin:{y}<br>2013 Winner:{prewinner}<br>2013 Winner Party:{preparty}",
+    legendText: "2013",
+    showInLegend: true, 
+    dataPoints:[
+      { label: "Abhanpur", y: 8354,prewinner:"DHANENDRA SAHU",preparty:"Indian National Congress"},
+      { label: "Ahiwara", y: 31676,prewinner:"RAJMAHNT SANWLA RAM DAHRE",preparty:"Bharatiya Janata Party"},
+      { label: "Akaltara",y:21693,prewinner:"CHUNNILAL SAHU",preparty:"Indian National Congress"},
+      { label: "Ambikapu",y: 19558,prewinner:"T.S.BABA",preparty:"Indian National Congress"},
+      { label: "Antagarh",y: 5171,prewinner:"VIKRAM USENDI",preparty:"Bharatiya Janata Party"},
+      { label: "Arang", y: 13774,prewinner:"NAVEEN MARKANDEY",preparty:"Bharatiya Janata Party"}
+    ]
+  },
+  {
+    type: "column", 
+     toolTipContent: "<b>{label}</b><br>Margin:{y}<br>2018 Winner:{winner}<br>2018 Winner Party:{winnerparty}",
+    legendText: "2018",
+    axisYType: "secondary",
+    showInLegend: true,
+    dataPoints:[
+      { label: "Abhanpur", y:23471,winner: "DHANENDRA SAHU",winnerparty:"Indian National Congress "},
+      { label: "Ahiwara", y:31687,winner: "GURU RUDRA KUMAR",winnerparty:"Indian National Congress "},
+      { label: "Akaltara", y:1854,winner: "SAURABH SINGH",winnerparty:"Bharatiya Janata Party"},
+      { label: "Ambikapu", y:39624,winner: "T.S.BABA",winnerparty:"Indian National Congress "},
+      { label: "Antagarh", y: 13414,winner: "ANOOP NAG",winnerparty:"Indian National Congress "},
+      { label: "Arang", y:25077,winner: "DR. SHIVKUMAR DAHARIYA",winnerparty:"Indian National Congress "}
+    ]
+  }]
+});
+chart.render();
+
+
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
+
+
+{% endblock %}
